@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FlowKit - Visual Scripting for Godot 4</title>
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="icon" type="image/svg+xml" href="assets/icon.svg" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="container">
+        <div class="nav-brand">
+          <a href="/">
+            <span class="brand-name">FlowKit</span>
+          </a>
+        </div>
+        <ul class="nav-links">
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#examples">Examples</a></li>
+          <li><a href="#getting-started">Getting Started</a></li>
+          <li><a href="#architecture">Architecture</a></li>
+          <li><a href="#providers">Providers</a></li>
+          <li>
+            <a
+              href="https://github.com/LexianDEV/FlowKit/releases/latest"
+              target="_blank"
+              >Download</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <img src="assets/Wordmark.svg" alt="FlowKit Logo" />
+          <p class="hero-subtitle">
+            Visual Event-Driven Programming for Godot 4
+          </p>
+          <p class="hero-description">
+            A Clickteam Fusion 2.5/Construct inspired visual scripting addon
+            enabling event-driven programming through an intuitive event sheet
+            interface.
+          </p>
+          <div class="hero-badges">
+            <span class="badge badge-blue">Godot 4.5</span>
+            <span class="badge badge-green">MIT License</span>
+            <span class="badge badge-purple">Open Source</span>
+          </div>
+          <div class="hero-cta">
+            <a
+              href="https://github.com/LexianDEV/FlowKit/releases/latest"
+              target="_blank"
+              class="btn btn-large btn-primary"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                style="margin-right: 8px"
+              >
+                <path d="M10 3L8.5 4.5 13 9H3v2h10l-4.5 4.5L10 17l7-7-7-7z" />
+              </svg>
+              Download</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Overview Section -->
+    <section id="overview" class="section">
+      <div class="container">
+        <h2>Overview</h2>
+        <p class="section-intro">
+          FlowKit brings the power of visual event-based programming to Godot,
+          allowing you to create game logic without writing code. Inspired by
+          popular event sheet systems like Clickteam Fusion and Construct,
+          FlowKit provides a familiar workflow for non-programmers and rapid
+          prototyping enthusiasts.
+        </p>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section section-alt">
+      <div class="container">
+        <h2>Key Features</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">🎯</div>
+            <h3>Event Sheet System</h3>
+            <p>
+              Create game logic using intuitive event blocks with conditions and
+              actions
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🔌</div>
+            <h3>Node-Based Architecture</h3>
+            <p>Target specific nodes in your scene tree for granular control</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📦</div>
+            <h3>Extensible Provider System</h3>
+            <p>Easily add custom events, conditions, and actions</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <h3>Runtime Engine</h3>
+            <p>
+              Efficient event processing during gameplay with automatic scene
+              detection
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🎨</div>
+            <h3>Editor Integration</h3>
+            <p>Seamless integration with Godot's editor interface</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">💾</div>
+            <h3>Resource-Based Storage</h3>
+            <p>
+              Event sheets saved as .tres resources for version control
+              friendliness
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Examples Section -->
+    <section id="examples" class="section">
+      <div class="container">
+        <h2>Examples</h2>
+        <p class="section-intro">
+          See FlowKit in action with these example screenshots
+        </p>
+        <div class="examples-grid">
+          <div class="example-card">
+            <div class="example-image">
+              <img
+                src="assets/examples/example1.png"
+                alt="Event Sheet Editor"
+              />
+            </div>
+            <h3>Event Sheet Editor</h3>
+            <p>Visual interface for creating events, conditions, and actions</p>
+          </div>
+          <div class="example-card">
+            <div class="example-image">
+              <img src="assets/examples/example3.png" alt="Node Selection" />
+            </div>
+            <h3>Node Selection</h3>
+            <p>Select target nodes directly from your scene tree</p>
+          </div>
+          <div class="example-card">
+            <div class="example-image">
+              <img src="assets/examples/example4.png" alt="Runtime Execution" />
+            </div>
+            <h3>Runtime Execution</h3>
+            <p>Events execute automatically during gameplay</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Getting Started Section -->
+    <section id="getting-started" class="section section-alt">
+      <div class="container">
+        <h2>Getting Started</h2>
+
+        <div class="content-block">
+          <h3>Installation</h3>
+          <ol class="styled-list">
+            <li>Download or clone the repository</li>
+            <li>
+              Copy the <code>flowkit</code> folder into your Godot project's
+              <code>addons/</code> directory
+            </li>
+            <li>
+              Enable the plugin in
+              <strong>Project → Project Settings → Plugins</strong>
+            </li>
+            <li>The FlowKit panel will appear at the bottom of the editor</li>
+          </ol>
+        </div>
+
+        <div class="content-block">
+          <h3>Creating Your First Event Sheet</h3>
+          <ol class="styled-list">
+            <li>Open a scene in the Godot editor</li>
+            <li>Click the <strong>FlowKit</strong> tab in the bottom panel</li>
+            <li>
+              Click <strong>"Create Event Sheet"</strong> to initialize an event
+              sheet for the current scene
+            </li>
+            <li>
+              Add an event block:
+              <ul>
+                <li>
+                  Click <strong>"Add Event"</strong> and select an event type
+                  (e.g., <code>On Process</code>)
+                </li>
+                <li>Select the target node from your scene tree</li>
+              </ul>
+            </li>
+            <li>
+              Add conditions (optional):
+              <ul>
+                <li>
+                  Click <strong>"Add Condition"</strong> on the event block
+                </li>
+                <li>Choose condition type and configure parameters</li>
+              </ul>
+            </li>
+            <li>
+              Add actions:
+              <ul>
+                <li>Click <strong>"Add Action"</strong> on the event block</li>
+                <li>Select target node and action type</li>
+                <li>Configure action parameters using expressions</li>
+              </ul>
+            </li>
+            <li>Save your event sheet (<strong>File → Save</strong>)</li>
+          </ol>
+          <p class="note">
+            Event sheets are automatically loaded and executed when their
+            associated scene runs.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Architecture Section -->
+    <section id="architecture" class="section">
+      <div class="container">
+        <h2>Architecture</h2>
+        <p class="section-intro">FlowKit operates as a dual-mode system:</p>
+
+        <div class="architecture-grid">
+          <div class="arch-card">
+            <h3>Editor Mode</h3>
+            <ul>
+              <li>
+                <strong>Visual Authoring:</strong> Bottom panel UI for creating
+                and editing event sheets
+              </li>
+              <li>
+                <strong>Node Selection:</strong> Integration with Godot's scene
+                tree for target selection
+              </li>
+              <li>
+                <strong>Expression Editor:</strong> Configure action/condition
+                parameters with GDScript expressions
+              </li>
+            </ul>
+          </div>
+          <div class="arch-card">
+            <h3>Runtime Mode</h3>
+            <ul>
+              <li>
+                <strong>FlowKit Engine:</strong> Autoloaded singleton
+                (<code>FlowKit</code>) that executes event sheets
+              </li>
+              <li>
+                <strong>Scene Detection:</strong> Automatically loads event
+                sheets matching the current scene
+              </li>
+              <li>
+                <strong>Event Loop:</strong> Processes events, conditions, and
+                actions every frame
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="code-block">
+          <h4>Event Sheet Structure</h4>
+          <pre><code>FKEventSheet (Resource)
+  └─ events: Array[FKEventBlock]
+      ├─ event_id: String (e.g., "on_process")
+      ├─ target_node: NodePath
+      ├─ conditions: Array[FKEventCondition]
+      │   ├─ condition_id: String
+      │   ├─ target_node: NodePath
+      │   └─ inputs: Dictionary
+      └─ actions: Array[FKEventAction]
+          ├─ action_id: String
+          ├─ target_node: NodePath
+          └─ inputs: Dictionary</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- Providers Section -->
+    <section id="providers" class="section section-alt">
+      <div class="container">
+        <h2>Built-in Providers</h2>
+
+        <div class="providers-grid">
+          <div class="provider-category">
+            <h3>Events</h3>
+            <ul>
+              <li>
+                <strong>On Ready:</strong> Triggered once when the node enters
+                the scene tree
+              </li>
+              <li><strong>On Process:</strong> Triggered every frame</li>
+              <li>
+                <strong>On Key Pressed:</strong> Triggered when a keyboard key
+                is pressed
+              </li>
+            </ul>
+          </div>
+
+          <div class="provider-category">
+            <h3>Conditions</h3>
+            <ul>
+              <li>
+                <strong>Get Key Down:</strong> Check if a specific key is
+                currently pressed
+              </li>
+            </ul>
+          </div>
+
+          <div class="provider-category">
+            <h3>Node Actions</h3>
+            <ul>
+              <li><strong>Print:</strong> Output text to the console</li>
+            </ul>
+          </div>
+
+          <div class="provider-category">
+            <h3>CharacterBody2D Actions</h3>
+            <ul>
+              <li>
+                <strong>Move and Collide:</strong> Move with collision detection
+              </li>
+              <li>
+                <strong>Move and Slide:</strong> Move with sliding collision
+                response
+              </li>
+              <li>
+                <strong>Normalize Velocity:</strong> Normalize the velocity
+                vector
+              </li>
+              <li>
+                <strong>Set Position X/Y:</strong> Set horizontal/vertical
+                position
+              </li>
+              <li><strong>Set Rotation:</strong> Set rotation angle</li>
+              <li>
+                <strong>Set Velocity X/Y:</strong> Set horizontal/vertical
+                velocity
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="note">
+          <strong>Note:</strong> More providers will be added in future updates,
+          and this list is not exhaustive.
+        </p>
+      </div>
+    </section>
+
+    <!-- Custom Providers Section -->
+    <section id="custom-providers" class="section">
+      <div class="container">
+        <h2>Creating Custom Providers</h2>
+        <p class="section-intro">
+          FlowKit's provider system makes it easy to extend functionality.
+          Providers are automatically discovered through the registry system.
+        </p>
+
+        <div class="code-examples">
+          <div class="code-example">
+            <h3>Creating a Custom Action</h3>
+            <p>
+              Create a new <code>.gd</code> file in
+              <code>addons/flowkit/actions/{"{NodeType}"}/</code>
+            </p>
+            <div class="code-block">
+              <pre><code>extends FKAction
+
+func get_id() -> String:
+    return "my_custom_action"
+
+func get_name() -> String:
+    return "My Custom Action"
+
+func get_supported_types() -> Array:
+    return ["Node2D"]  # Compatible node types
+
+func get_inputs() -> Array:
+    return [
+        {"name": "amount", "type": "float"},
+        {"name": "message", "type": "String"}
+    ]
+
+func execute(node: Node, inputs: Dictionary) -> void:
+    var amount = inputs.get("amount", 0.0)
+    var message = inputs.get("message", "")
+    print(message, " - ", amount)</code></pre>
+            </div>
+          </div>
+
+          <div class="code-example">
+            <h3>Creating a Custom Condition</h3>
+            <p>
+              Create a new <code>.gd</code> file in
+              <code>addons/flowkit/conditions/</code>
+            </p>
+            <div class="code-block">
+              <pre><code>extends FKCondition
+
+func get_id() -> String:
+    return "my_custom_condition"
+
+func get_name() -> String:
+    return "My Custom Condition"
+
+func get_supported_types() -> Array:
+    return ["Node"]
+
+func get_inputs() -> Array:
+    return [{"name": "threshold", "type": "float"}]
+
+func check(node: Node, inputs: Dictionary) -> bool:
+    var threshold = inputs.get("threshold", 0.0)
+    return true  # or false</code></pre>
+            </div>
+          </div>
+
+          <div class="code-example">
+            <h3>Creating a Custom Event</h3>
+            <p>
+              Create a new <code>.gd</code> file in
+              <code>addons/flowkit/events/</code>
+            </p>
+            <div class="code-block">
+              <pre><code>extends FKEvent
+
+func get_id() -> String:
+    return "on_custom_event"
+
+func get_name() -> String:
+    return "On Custom Event"
+
+func get_supported_types() -> Array:
+    return ["Node"]
+
+func poll(node: Node) -> bool:
+    return false  # Return true when event should trigger</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Usage Tips Section -->
+    <section id="tips" class="section section-alt">
+      <div class="container">
+        <h2>Usage Tips</h2>
+        <div class="tips-grid">
+          <div class="tip-card">
+            <h4>Scene Naming</h4>
+            <p>
+              Event sheets are automatically matched to scenes by filename
+              (e.g., <code>world.tscn</code> → <code>world.tres</code>)
+            </p>
+          </div>
+          <div class="tip-card">
+            <h4>Node Paths</h4>
+            <p>All node paths are relative to the scene root</p>
+          </div>
+          <div class="tip-card">
+            <h4>Expressions</h4>
+            <p>
+              Action/condition inputs support GDScript expressions (e.g.,
+              <code>position.x + 10</code>, <code>Vector2(100, 200)</code>)
+            </p>
+          </div>
+          <div class="tip-card">
+            <h4>Organization</h4>
+            <p>
+              Group related providers in subdirectories for better organization
+            </p>
+          </div>
+          <div class="tip-card">
+            <h4>Debugging</h4>
+            <p>
+              Check the Godot console for FlowKit engine logs during runtime
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <img src="assets/icon.svg" alt="FlowKit Logo" class="footer-logo" />
+            <p>Visual event-driven programming for Godot 4</p>
+          </div>
+          <div class="footer-section">
+            <h4>Resources</h4>
+            <ul>
+              <li>
+                <a href="https://github.com/lexiandev/flowkit"
+                  >GitHub Repository</a
+                >
+              </li>
+              <li>
+                <a href="https://github.com/lexiandev/flowkit/issues"
+                  >Report Issues</a
+                >
+              </li>
+              <li><a href="https://godotengine.org">Godot Engine</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Inspired By</h4>
+            <ul>
+              <li>Clickteam Fusion 2.5</li>
+              <li>Construct</li>
+              <li>Scratch</li>
+              <li>Godot Engine</li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>License</h4>
+            <p>MIT License</p>
+            <p class="footer-credit">
+              Made with ❤️ for the Godot community by <strong>LexianDEV</strong>
+            </p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 FlowKit. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="assets/script.js"></script>
+  </body>
+</html>
